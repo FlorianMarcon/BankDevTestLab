@@ -37,6 +37,6 @@
 		}
   },
   "runCommand": {
-		"commandToExecute": "[concat('sh linux_install_bank_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' ', parameters('PersonalAccessToken'), ' ', parameters('DotenvFileUri'), ' ', parameters('ExposedPort'))]",
+		"commandToExecute": "[concat('sh linux_install_bank_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' ', parameters('PersonalAccessToken'), ' ', parameters('DotenvFileUri'), ' ', parameters('ExposedPort'))]"
   }
 }
