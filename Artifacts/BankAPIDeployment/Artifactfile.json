@@ -21,7 +21,7 @@
       "description": "The username used to clone repository"
     },
     "PersonalAccessToken": {
-      "type": "string",
+      "type": "securestring",
       "displayName": "Personal Access Token",
       "description": "Personal Access Token for accessing the Git repository."
 		},
