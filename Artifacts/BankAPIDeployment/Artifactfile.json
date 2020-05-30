@@ -27,7 +27,7 @@
       "description": "Personal Access Token for accessing the Git repository."
 		},
 		"DotenvFileUri": {
-			"type": "string",
+			"type": "securestring",
 			"displayName": "Dotenv file uri",
 			"description": "Dotenv file uri to set environment variable"
 		},
