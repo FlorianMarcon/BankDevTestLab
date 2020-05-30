@@ -29,7 +29,7 @@ docker build -t app .
 
 echo  "\e[33mLaunching application\e[0m"
 echo "Port:	"	$5
-docker run -p 443:$5 -d app:latest
+docker run --name=bankapi --restart=always -p 443:$5 -d app:latest
 
 echo "\e[32mArtifact finished successfully\e[0m"
 exit 0
