@@ -34,4 +34,4 @@ docker run -p 443:$5 -d app:latest
 echo "\e[32mArtifact finished successfully\e[0m"
 exit 0
 
-#sh linux_install_bank_v1.sh master FlorianMarcon 9aefc821790757536155511061f9650ccb7901ba 'https://drive.google.com/uc?id=1ddeLj-_aOOtcZa0s2b5m6MeRb79xbiJv&authuser=0&export=download' 443
+#sh linux_install_bank_v1.sh master <user> <token> <.envuri> 443
