@@ -13,8 +13,9 @@
     "Branch": {
       "type": "string",
       "displayName": "Branch / Tag",
-      "description": "The branch or tag that will be checked out. Specify 'master' if you're not sure."
-		},
+      "description": "The branch or tag that will be checked out. Specify 'master' if you're not sure.",
+      "defaultValue": "master"
+    },
 		"User": {
       "type": "string",
       "displayName": "Github User",
@@ -33,7 +34,8 @@
 		"ExposedPort": {
       "type": "int",
       "displayName": "Port",
-      "description": "The port where application is exposed."
+      "description": "The port where application is exposed.",
+      "defaultValue": 443
 		}
   },
   "runCommand": {
