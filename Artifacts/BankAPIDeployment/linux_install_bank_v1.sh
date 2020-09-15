@@ -29,9 +29,9 @@ docker build -t app .
 
 echo  "\e[33mLaunching application\e[0m"
 echo "Port:	"	$5
-docker run --name=bankapi --restart=always -p 443:$5 -d app:latest
+docker run --name=bankapi --restart=always -p $5:80 -d app:latest
 
 echo "\e[32mArtifact finished successfully\e[0m"
 exit 0
 
-#sh linux_install_bank_v1.sh master <user> <token> <.envuri> 443
+#sh linux_install_bank_v1.sh master <user> <token> <.envuri> 80
