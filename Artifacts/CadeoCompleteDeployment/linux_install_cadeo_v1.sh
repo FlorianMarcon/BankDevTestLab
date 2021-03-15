@@ -20,8 +20,9 @@ if [ $installationStatus -eq 127 ] ; then
     sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
 fi
 
+echo "Mode is $1"
+echo "Mode is $1" >&2
 if [ "$1" == "production" ] ; then
-    echo "Mode is Production"
     cd production
     # domains=(www.cartt.fr cartt.fr www.api.cartt.fr api.cartt.fr)
 elif [ "$1" == "development" ] ; then
