@@ -22,6 +22,7 @@ fi
 
 echo "Mode is $1"
 echo "Mode is $1" >&2
+echo $(ls) >&2
 if [ "$1" == "production" ] ; then
     cd production
     # domains=(www.cartt.fr cartt.fr www.api.cartt.fr api.cartt.fr)
