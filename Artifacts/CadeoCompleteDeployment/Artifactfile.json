@@ -10,14 +10,29 @@
   ],
 	"targetOsType": "Linux",
 	"parameters": {
+    "Branch": {
+      "type": "string",
+      "displayName": "Branch / Tag",
+      "description": "The branch or tag that will be checked out. Specify 'master' if you're not sure.",
+      "defaultValue": "master"
+    },
+		"User": {
+      "type": "string",
+      "displayName": "Github User",
+      "description": "The username used to clone repository"
+    },
+    "PersonalAccessToken": {
+      "type": "securestring",
+      "displayName": "Personal Access Token",
+      "description": "Personal Access Token for accessing the Git repository."
+		},
     "mode": {
       "type": "string",
       "displayName": "Deployment mode",
-      "description": "To set ssl certificates",
       "allowedValues": ["production", "development"]
     }
   },
   "runCommand": {
-		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('mode'))]"
+    "commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('DotenvFileUri'), '\"', parameters('mode'))]"
   }
 }

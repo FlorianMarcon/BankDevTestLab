@@ -20,19 +20,22 @@ if [ $installationStatus -eq 127 ] ; then
     sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
 fi
 
-echo "Mode is $1"
-echo "Mode is $1" >&2
-echo $(ls) >&2
-if [ "$1" == "production" ] ; then
-    cd production
-    # domains=(www.cartt.fr cartt.fr www.api.cartt.fr api.cartt.fr)
-elif [ "$1" == "development" ] ; then
-    echo "Mode development not yet implemented"
-    exit 42
-else
-    exit 42
-fi
-echo "\e[33mLaunching script to start docker compose in folder $folder\e[0m"
+
+echo "\e[33mInstalling git\e[0m"
+apt-get -y install git
+
+echo  "\e[33mClonning repository\e[0m"
+echo "Branch is	" $1
+echo "Github Username:	" $2
+echo "Personal Access Token:	" $3
+git clone --recurse-submodules https://$2:$3@github.com/FlorianMarcon/CadeoDockerComposeDeployment.git --branch $1
+
+echo  "\e[33mDownloading .env file\e[0m"
+echo "Mode:	"	$4
+cd CadeoDockerComposeDeployment
+cd $4
+
+echo "\e[33mLaunching script to start docker compose in folder $pwd\e[0m"
 chmod +x "./init-letsencrypt.sh"
 ./init-letsencrypt.sh
 
