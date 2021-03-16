@@ -39,6 +39,12 @@ echo "\e[33mLaunching script to start docker compose in folder $pwd\e[0m"
 chmod +x "./init-letsencrypt.sh"
 ./init-letsencrypt.sh
 
+initStatus=$(echo $?)
+if [ $installationStatus -ne 0 ] ; then
+    echo "Error while lets encrypt initialisation"
+    exit 42
+fi
+
 echo "\e[32mArtifact finished successfully\e[0m"
 exit 0
 
