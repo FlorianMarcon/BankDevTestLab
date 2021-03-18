@@ -18,7 +18,7 @@ echo "Github Username:	" $2
 echo "Personal Access Token:	" $3
 git clone --recurse-submodules https://$2:$3@github.com/marcfrezal/Cadeo_Front_Web.git --branch $1
 
-cd APICadeo
+cd Cadeo_Front_Web
 
 # echo  "\e[33mDownloading .env file\e[0m"
 # echo ".env uri:	"	$4
