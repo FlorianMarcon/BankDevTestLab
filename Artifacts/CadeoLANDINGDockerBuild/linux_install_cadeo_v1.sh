@@ -20,9 +20,9 @@ git clone --recurse-submodules https://$2:$3@github.com/marcfrezal/Cadeo_Front_W
 
 cd APICadeo
 
-echo  "\e[33mDownloading .env file\e[0m"
-echo ".env uri:	"	$4
-wget $4 -O .env
+# echo  "\e[33mDownloading .env file\e[0m"
+# echo ".env uri:	"	$4
+# wget $4 -O .env
 
 echo  "\e[33mBuilding Image\e[0m"
 docker build -t cadeo-landing .
