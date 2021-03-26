@@ -30,9 +30,14 @@
 			"type": "securestring",
 			"displayName": "Dotenv file uri",
 			"description": "Dotenv file uri to set environment variable"
+    },
+    "mode": {
+      "type": "string",
+      "displayName": "Deployment mode",
+      "allowedValues": ["production", "development"]
     }
   },
   "runCommand": {
-		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('DotenvFileUri'), '\"')]"
+		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('DotenvFileUri'), '\" \"', parameters('mode'), '\"')]"
   }
 }

@@ -25,7 +25,7 @@ echo ".env uri:	"	$4
 wget $4 -O .env
 
 echo  "\e[33mBuilding Image\e[0m"
-docker build -t cadeo-api .
+docker build -t cadeo-api-$5 .
 
 # echo  "\e[33mLaunching application\e[0m"
 # echo "Port:	"	$5
