@@ -30,14 +30,14 @@ echo "Github Username:	" $2
 echo "Personal Access Token:	" $3
 git clone --recurse-submodules https://$2:$3@github.com/FlorianMarcon/CadeoDockerComposeDeployment.git --branch $1
 
-echo  "\e[33mDownloading .env file\e[0m"
+# echo  "\e[33mDownloading .env file\e[0m"
 echo "Mode:	"	$4
 cd CadeoDockerComposeDeployment
 cd $4
 
 echo "\e[33mLaunching script to start docker compose in folder $pwd\e[0m"
 chmod +x "./init-letsencrypt.sh"
-./init-letsencrypt.sh
+./init-letsencrypt.sh $5
 
 initStatus=$(echo $?)
 if [ $installationStatus -ne 0 ] ; then

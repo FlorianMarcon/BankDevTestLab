@@ -29,7 +29,7 @@
     "mode": {
       "type": "string",
       "displayName": "Deployment mode",
-      "allowedValues": ["production", "development"]
+      "allowedValues": ["production", "development", "all"]
     }
   },
   "runCommand": {
