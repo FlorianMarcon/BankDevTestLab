@@ -32,5 +32,5 @@ docker build -t cadeo-api-$5 .
 # docker run --name=cadeo-api --restart=always -p $5:80 -d app:latest
 
 echo "\e[32mArtifact finished successfully\e[0m"
-exit 0
+exit $?
 
