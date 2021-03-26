@@ -18,6 +18,11 @@ echo "Github Username:	" $2
 echo "Personal Access Token:	" $3
 git clone --recurse-submodules https://$2:$3@github.com/marcfrezal/Cadeo_Front_Web.git --branch $1
 
+if [ $installationStatus -ne 0 ] ; then
+    echo  "\e[33mUne erreur est survenue durant le clonage du dépot\e[0m"
+    exit 42
+fi
+
 cd Cadeo_Front_Web
 
 # echo  "\e[33mDownloading .env file\e[0m"
@@ -25,8 +30,8 @@ cd Cadeo_Front_Web
 # wget $4 -O .env
 
 echo  "\e[33mBuilding Image\e[0m"
-docker build -t cadeo-landing .
-
+docker build -t cadeo-landing-$5 .
+ret=$?
 echo "\e[32mArtifact finished successfully\e[0m"
-exit 0
+exit ret
 

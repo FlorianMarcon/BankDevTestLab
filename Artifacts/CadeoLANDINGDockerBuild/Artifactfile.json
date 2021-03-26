@@ -25,9 +25,14 @@
       "type": "securestring",
       "displayName": "Personal Access Token",
       "description": "Personal Access Token for accessing the Git repository."
-		}
+		},
+    "mode": {
+      "type": "string",
+      "displayName": "Deployment mode",
+      "allowedValues": ["production", "development"]
+    }
   },
   "runCommand": {
-		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\"')]"
+		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('mode'), '\"')]"
   }
 }
