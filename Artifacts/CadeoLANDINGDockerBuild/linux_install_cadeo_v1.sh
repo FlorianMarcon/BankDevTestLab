@@ -18,7 +18,7 @@ echo "Github Username:	" $2
 echo "Personal Access Token:	" $3
 git clone --recurse-submodules https://$2:$3@github.com/marcfrezal/Cadeo_Front_Web.git --branch $1
 
-if [ $installationStatus -ne 0 ] ; then
+if [ $? -ne 0 ] ; then
     echo  "\e[33mUne erreur est survenue durant le clonage du dépot\e[0m"
     exit 42
 fi
