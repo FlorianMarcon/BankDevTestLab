@@ -31,7 +31,7 @@ cd Cadeo_Front_Web
 
 echo  "\e[33mBuilding Image\e[0m"
 docker build -t cadeo-landing-$4 .
-ret=$?
+
 echo "\e[32mArtifact finished successfully\e[0m"
-exit ret
+exit $?
 
