@@ -26,6 +26,11 @@
       "displayName": "Personal Access Token",
       "description": "Personal Access Token for accessing the Git repository."
 		},
+		"DotenvFileUri": {
+			"type": "securestring",
+			"displayName": "Dotenv file uri",
+			"description": "Dotenv file uri to set environment variable"
+    },
     "mode": {
       "type": "string",
       "displayName": "Deployment mode",
@@ -33,6 +38,6 @@
     }
   },
   "runCommand": {
-		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('mode'), '\"')]"
+		"commandToExecute": "[concat('sh linux_install_cadeo_v1.sh ', parameters('Branch'), ' ', parameters('User'), ' \"', parameters('PersonalAccessToken'), '\" \"', parameters('DotenvFileUri'), '\" \"', parameters('mode'), '\"')]"
   }
 }
